@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TABELA UNDER LIMITE</title>
+  <style>
+    :root {
+      --bg: #0f1220;
+      --panel: #161a2e;
+      --text: #e6e8ef;
+      --muted: #a9afc7;
+      --red: #ff4d4f;
+      --green: #18c37e;
+      --line: #2a3154;
+      --accent: #5b7cff;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(180deg, #0d1020 0%, #0f1220 100%);
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 48px auto;
+      padding: 0 24px;
+    }
+
+    header {
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin: 0 0 8px 0;
+      letter-spacing: 0.3px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 820px;
+    }
+
+    thead th {
+      text-align: left;
+      font-weight: 600;
+      padding: 14px 12px;
+      background: #1b2140;
+      border-bottom: 1px solid var(--line);
+      color: #cbd1e8;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    tbody td {
+      padding: 12px;
+      border-bottom: 1px dashed var(--line);
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    tbody tr:hover td {
+      background: rgba(91, 124, 255, 0.08);
+    }
+
+    /* Colunas com estilo especial */
+    .col-perc-in {
+      color: var(--red);
+      font-weight: 600;
+      width: 110px;
+    }
+
+    .col-perc-out {
+      color: var(--green);
+      font-weight: 700;
+      width: 110px;
+    }
+
+    .col-odd {
+      color: #ffd166;
+      font-weight: 600;
+    }
+
+    .col-tick {
+      color: #60d2ff;
+      font-weight: 600;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .badge-low { background: rgba(255,77,79,0.12); color: #ff8b8c; border: 1px solid rgba(255,77,79,0.35); }
+    .badge-mid { background: rgba(255,209,102,0.12); color: #ffd166; border: 1px solid rgba(255,209,102,0.35); }
+    .badge-high { background: rgba(24,195,126,0.12); color: #18c37e; border: 1px solid rgba(24,195,126,0.35); }
+
+    .legend {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 14px 16px;
+      border-top: 1px solid var(--line);
+      background: #171c34;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .quote {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 18px;
+      align-items: center;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .quote img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      filter: grayscale(100%) contrast(105%);
+      border: 1px solid var(--line);
+    }
+
+    blockquote {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .quote .author {
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .footer-note {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Responsivo */
+    @media (max-width: 640px) {
+      .quote {
+        grid-template-columns: 1fr;
+      }
+      .quote img {
+        max-width: 220px;
+        justify-self: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>TABELA UNDER LIMITE</h1>
+      <p class="subtitle">Mapa de percentuais, cenários (Baixa / Média / Alta), odds e ticks para referência operacional.</p>
+    </header>
+
+    <div class="panel table-wrap">
+      <table aria-label="Tabela Under Limite">
+        <thead>
+          <tr>
+            <th class="col-perc-in">%</th>
+            <th>Baixa</th>
+            <th>Média</th>
+            <th>Alta</th>
+            <th class="col-odd">Odd</th>
+            <th class="col-tick">Tick</th>
+            <th class="col-perc-out">% final</th>
+          </tr>
+        </thead>
+        <tbody>
+         <tbody>
+  <tr><td class="col-perc-in">0%</td><td>0</td><td>0</td><td>0</td><td class="col-odd">1.01</td><td class="col-tick">1</td><td class="col-perc-out">99.00%</td></tr>
+  <tr><td class="col-perc-in">5%</td><td>5</td><td>6</td><td>7</td><td class="col-odd">1.06</td><td class="col-tick">6</td><td class="col-perc-out">94.00%</td></tr>
+  <tr><td class="col-perc-in">10%</td><td>10</td><td>11</td><td>12</td><td class="col-odd">1.11</td><td class="col-tick">11</td><td class="col-perc-out">90.00%</td></tr>
+  <tr><td class="col-perc-in">15%</td><td>15</td><td>16</td><td>17</td><td class="col-odd">1.17</td><td class="col-tick">17</td><td class="col-perc-out">85.00%</td></tr>
+  <tr><td class="col-perc-in">20%</td><td>20</td><td>21</td><td>22</td><td class="col-odd">1.22</td><td class="col-tick">22</td><td class="col-perc-out">82.00%</td></tr>
+  <tr><td class="col-perc-in">25%</td><td>25</td><td>26</td><td>27</td><td class="col-odd">1.27</td><td class="col-tick">27</td><td class="col-perc-out">78.00%</td></tr>
+  <tr><td class="col-perc-in">30%</td><td>30</td><td>31</td><td>32</td><td class="col-odd">1.32</td><td class="col-tick">32</td><td class="col-perc-out">75.00%</td></tr>
+  <tr><td class="col-perc-in">35%</td><td>35</td><td>36</td><td>37</td><td class="col-odd">1.37</td><td class="col-tick">37</td><td class="col-perc-out">73.00%</td></tr>
+  <tr><td class="col-perc-in">40%</td><td>40</td><td>41</td><td>42</td><td class="col-odd">1.42</td><td class="col-tick">42</td><td class="col-perc-out">70.00%</td></tr>
+  <tr><td class="col-perc-in">45%</td><td>45</td><td>46</td><td>47</td><td class="col-odd">1.47</td><td class="col-tick">47</td><td class="col-perc-out">68.00%</td></tr>
+  <tr><td class="col-perc-in">50%</td><td>50</td><td>51</td><td>52</td><td class="col-odd">1.52</td><td class="col-tick">52</td><td class="col-perc-out">66.00%</td></tr>
+  <tr><td class="col-perc-in">55%</td><td>55</td><td>56</td><td>57</td><td class="col-odd">1.57</td><td class="col-tick">57</td><td class="col-perc-out">64.00%</td></tr>
+  <tr><td class="col-perc-in">60%</td><td>60</td><td>61</td><td>62</td><td class="col-odd">1.62</td><td class="col-tick">62</td><td class="col-perc-out">62.00%</td></tr>
+  <tr><td class="col-perc-in">65%</td><td>65</td><td>66</td><td>67</td><td class="col-odd">1.67</td><td class="col-tick">67</td><td class="col-perc-out">60.00%</td></tr>
+  <tr><td class="col-perc-in">70%</td><td>70</td><td>71</td><td>72</td><td class="col-odd">1.72</td><td class="col-tick">72</td><td class="col-perc-out">58.00%</td></tr>
+  <tr><td class="col-perc-in">75%</td><td>75</td><td>76</td><td>77</td><td class="col-odd">1.77</td><td class="col-tick">77</td><td class="col-perc-out">56.00%</td></tr>
+  <tr><td class="col-perc-in">80%</td><td>80</td><td>81</td><td>82</td><td class="col-odd">1.82</td><td class="col-tick">82</td><td class="col-perc-out">54.00%</td></tr>
+  <tr><td class="col-perc-in">85%</td><td>85</td><td>86</td><td>87</td><td class="col-odd">1.87</td><td class="col-tick">87</td><td class="col-perc-out">52.00%</td></tr>
+  <tr><td class="col-perc-in">90%</td><td>90</td><td>91</td><td>92</td><td class="col-odd">1.92</td><td class="col-tick">92</td><td class="col-perc-out">50.00%</td></tr>
+  <tr><td class="col-perc-in">95%</td><td>95</td><td>96</td><td>97</td><td class="col-odd">1.97</td><td class="col-tick">97</td><td class="col-perc-out">48.00%</td></tr>
+  <tr><td class="col-perc-in">100%</td><td>100</td><td>100</td><td>100</td><td class="col-odd">2.00</td><td class="col-tick">100</td><td class="col-perc-out">47.00%</td></tr>
+</tbody>
+
+      </table>
+
+      <div class="legend">
+        <span class="badge badge-low">Baixa</span>
+        <span class="badge badge-mid">Média</span>
+        <span class="badge badge-high">Alta</span>
+        <span>• Odd = preço de mercado • Tick = variação incremental</span>
+      </div>
+    </div>
+
+    <div class="quote">
+      <!-- Substitua o src pela sua imagem do Warren Buffett, se desejar -->
+      <img src="" alt="Warren Buffett em preto e branco" />
+      <div>
+        <blockquote>
+          “Não precisamos ser mais espertos que os outros; precisamos ser mais disciplinados que os outros.”
+        </blockquote>
+        <div class="author">— Warren Buffett</div>
+        <div class="footer-note">Observação: inclua sua imagem (src) se quiser exibir a foto.</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
